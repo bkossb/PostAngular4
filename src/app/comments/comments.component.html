@@ -1,0 +1,20 @@
+<div class="container commentInput">
+  <form>
+    <div class="form-group">
+      <label for="comment">Leave a comment</label>
+      <textarea id="comment" class="form-control" rows="3" #comment></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="createComment(comment)">Submit</button>
+  </form>
+</div>
+<div class="container comments">
+  <div class="comment" *ngFor="let comment of comments">
+    <div class="userImg">
+      <img src="http://placehold.it/100x100" class="cardImg">
+    </div>
+    <div class="commentName">
+      <h5>{{comment.email}}</h5>
+      <p class="card-text">{{comment.body}}</p>
+    </div>
+  </div>
+</div>
