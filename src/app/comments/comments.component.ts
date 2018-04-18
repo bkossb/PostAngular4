@@ -14,7 +14,7 @@ export class CommentsComponent implements OnInit {
   constructor(private postService: PostService, private route: ActivatedRoute) {
   }
 
-  getId() {
+  getId(): number {
     return this.route.snapshot.params['id'];
   }
 
@@ -33,6 +33,6 @@ export class CommentsComponent implements OnInit {
     let comment = {postId: this.getId(), name: 'name', email: 'example@example.com', body: input.value};
     this.postService.createComment(comment);
     this.comments.splice(0, 0, comment);
-    input.value='';
+    input.value = '';
   }
 }
