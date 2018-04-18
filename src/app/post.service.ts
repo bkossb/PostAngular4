@@ -28,7 +28,7 @@ export class PostService {
       .map((res) => res.json());
   }
 
-  createComment(value: string) {
+  createComment(value: any) {
     this.http.post(`${this.apiUrl}`, JSON.stringify(value))
       .subscribe(response => {
         value['id'] = response.json().id;
